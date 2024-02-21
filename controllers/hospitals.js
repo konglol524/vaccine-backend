@@ -25,6 +25,7 @@ exports.getHospital= async (req, res, next) => {
 };
 
 exports.createHospital= async (req, res, next) => {
+    //console.log(req.body);
     const hospital = await Hospital.create(req.body);
     res.status(201).json({success:true, data: hospital});
 };
