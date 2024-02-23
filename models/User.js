@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-//Encrypt password using bcrypt, do this before save
+//Encrypt password using bcrypt, do this before saving
 UserSchema.pre('save', async function(next){
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
