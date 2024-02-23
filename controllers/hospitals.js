@@ -19,7 +19,8 @@ exports.getHospitals = async (req, res, next) => {
     //\b is for boundary [lt] -> $lt put a dollar sign in front
     queryStr=queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match=>`$${match}`);
    //finding resource
-    query = Hospital.find(JSON.parse(queryStr));
+    query = Hospital.find(JSON.parse(queryStr)).populate('appointments');
+    //query = Hospital.find(JSON.parse(queryStr)).populate('lol');
     
     //select Fields
     if(req.query.select){
