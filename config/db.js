@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://kongbhumi:kongbhumi123@swpracticecluster.wqpltih.mongodb.net/vacQ?retryWrites=true&w=majority";
+
 const connectDB = async () => {
     mongoose.set('strictQuery', true); //to suppress deprecated warning
     const conn = await mongoose.connect(process.env.MONGO_URI);
